@@ -1,0 +1,12 @@
+@import "../../styles/scss/cross-btn";
+
+#add-teacher {
+    box-sizing: border-box;
+    width: 100px;
+    padding-left: 28px;
+    line-height: 26px;
+
+    &:hover {
+        font-weight: bold;
+    }
+}

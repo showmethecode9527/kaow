@@ -1,0 +1,54 @@
+/**
+ * 十字按钮(一般用在"新增"、"添加"、"创建"等情景)
+ *
+ * 结构: <div class="cross-btn"></div>
+ */
+$cross-btn-width: 26px;
+$cross-btn-height: 26px;
+$cross-btn-border: 1px solid #999;
+$cross-width: 16px;
+$cross-height: 2px;
+$cross-color: #666;
+
+.cross-btn {
+    width: $cross-btn-width;
+    height: $cross-btn-height;
+    border: $cross-btn-border;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+
+    &:after,
+    &:before {
+        content: "";
+        display: block;
+        float: left;
+        background: $cross-color;
+        position: absolute;
+    }
+    
+    /* 横 */
+    &:before {
+        width: $cross-width;
+        height: $cross-height;
+        top: ($cross-btn-height - $cross-height) / 2;
+        left: ($cross-btn-width - $cross-width) / 2;
+    }
+
+    /* 竖 */
+    &:after {
+        width: $cross-height;
+        height: $cross-width;
+        top: ($cross-btn-height - $cross-width) / 2;
+        left: ($cross-btn-width - $cross-height) / 2;
+    }
+
+    &:hover {
+        box-shadow: 0 0 2px #999;
+        &:after,
+        &:before {
+            box-shadow: 0 0 2px #999;
+            background: lighten($cross-color, 10%);
+        }
+    }
+}
